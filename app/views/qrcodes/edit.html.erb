@@ -1,0 +1,6 @@
+<%= form_for @qrcode, :url => { :controller => 'qrcodes', :action => 'update', :id => @qrcode } do |f| %>
+
+    <%= render :partial => "form", :locals => { :f => f} %>
+
+    <%= f.submit "Update" %>
+<% end %>

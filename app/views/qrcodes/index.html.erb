@@ -1,0 +1,18 @@
+<h1> Qrcode List </h1>
+
+<ul>
+
+<% @qrcodes.each do |e| %>
+
+  <li>
+ 	  <%= e.code %>
+
+ 	  <%= link_to "Show", qrcode_path(e) %>
+
+ 	  <%= link_to "Edit", edit_qrcode_path(e) %>
+ 	  <%= link_to "Delete", qrcode_path(e), :method => :delete %>
+  </li>
+<% end %>
+
+</ul>
+<%= link_to 'New Qrcodes', new_qrcode_path %>
