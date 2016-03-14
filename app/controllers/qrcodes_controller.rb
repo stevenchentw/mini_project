@@ -21,8 +21,12 @@ class QrcodesController < ApplicationController
  
  def create
     @qrcode = Qrcode.new( qrcode_params )
-    @qrcode.save
-    redirect_to :action => :index
+
+    if @qrcode.save
+       redirect_to :action => :index
+    else
+       render :action => :new
+    end
  end 
 
  def edit
