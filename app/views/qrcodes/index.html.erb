@@ -6,11 +6,11 @@
 
   <li>
  	  <%= e.code %>
-
  	  <%= link_to "Show", qrcode_path(e) %>
-
+ 	  <%= link_to 'attendees', qrcode_attendees_path(e) %>
  	  <%= link_to "Edit", edit_qrcode_path(e) %>
  	  <%= link_to "Delete", qrcode_path(e), :method => :delete %>
+ 	  <%= link_to 'location', qrcode_location_path(e) %>
   </li>
 <% end %>
 

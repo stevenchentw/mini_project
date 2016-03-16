@@ -1,10 +1,10 @@
 class QrcodesController < ApplicationController
 
  before_action :set_qrcode, :only => [:show, :edit, :update, :destroy]
- 
+
  def index
     @qrcodes = Qrcode.all
- end   
+ end
 
  def destroy
     @qrcode.delete
@@ -18,7 +18,7 @@ class QrcodesController < ApplicationController
  def new
  	@qrcode = Qrcode.new
  end
- 
+
  def create
     @qrcode = Qrcode.new( qrcode_params )
 
@@ -27,7 +27,7 @@ class QrcodesController < ApplicationController
     else
        render :action => :new
     end
- end 
+ end
 
  def edit
  end
@@ -45,7 +45,7 @@ def set_qrcode
 end
 
 def qrcode_params
-  params.require(:qrcode).permit(:code, :description)
+  params.require(:qrcode).permit(:code, :description, :category_id, :location_attributes => [:id, :name, :_destroy], :group_ids => [] )
 end
 
 

@@ -1,0 +1,15 @@
+<ul>
+<% @attendees.each do |attendee| %>
+	<li>
+	  <%= attendee.name %>
+	  <%= link_to 'show', qrcode_attendee_path(@qrcode, attendee) %>
+	  <%= link_to 'edit', edit_qrcode_attendee_path(@qrcode, attendee) %>
+	  <%= link_to 'destroy', qrcode_attendee_path(@qrcode, attendee),:method => :delete %>
+	</li>
+<% end %>
+
+</ul>
+
+	  <%= link_to 'new attendee', new_qrcode_attendee_path(@qrcode) %>
+
+	  <p><%= link_to 'Back to index', :controller => 'qrcodes', :action => 'index' %></p>

@@ -1,4 +1,6 @@
-<%= form_for @qrcode, :url => { :controller => 'qrcodes', :action => 'update', :id => @qrcode } do |f| %>
+
+
+<%= form_for setup_qrcode(@qrcode), :url => qrcode_path(@qrcode), :method => :put do |f| %>
 
     <%= render :partial => "form", :locals => { :f => f} %>
 

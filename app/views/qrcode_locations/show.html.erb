@@ -1,0 +1,12 @@
+<h1><%= @qrcode.name %></h1>
+
+<% if @qrcode.location %>
+  <p><%= @qrcode.location.name %></p>
+  <p><%= link_to "edit", edit_qrcode_location_path(@qrcode) %></p>
+  <p><%= link_to "destroy", qrcode_location_path(@qrcode), :method => :delete %></p>
+<% else %>
+  <p>N/A</p>
+  <p><%= link_to "Add location", new_qrcode_location_path(@qrcode) %></p>
+<% end %>
+
+<p><%= link_to 'Back to location index',qrcodes_path %></p>

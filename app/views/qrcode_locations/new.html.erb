@@ -1,0 +1,4 @@
+<%= form_for @location, :url => qrcode_location_path(@qrcode) do |f| %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>

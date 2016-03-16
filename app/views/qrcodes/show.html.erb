@@ -3,4 +3,6 @@
 
 <%= simple_format(@qrcode.description) %>
 
-<p><%= link_to 'Back to index', :controller => 'qrcodes', :action => 'index' %></p>
+<p>Category: <%= @qrcode.category.name %><p>
+
+<p><%= link_to 'Back to index', qrcodes_path %></p>
