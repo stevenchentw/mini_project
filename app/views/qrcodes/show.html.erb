@@ -2,10 +2,10 @@
 <h2><%= @qrcode.name %></h2>
 
 
-<p> Code: <%= @qrcode.code %> </p>
+<p> 代碼: <%= @qrcode.code %> </p>
 
-<p> Description: <%= simple_format(@qrcode.description) %> </p>
+<p> 詳細內容: <%= simple_format(@qrcode.description) %> </p>
 
-<p>Category: <%= @qrcode.category.name %><p>
+<p>表頭總類: <%= @qrcode.category.name %><p>
 
-<p><%= link_to 'Back to index', qrcodes_path, :class => "btn btn-default"  %></p>
+<p><%= link_to '回到主選單', qrcodes_path, :class => "btn btn-default"  %></p>

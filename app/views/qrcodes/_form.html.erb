@@ -9,23 +9,27 @@
 <% end %>
 
 <div class="form-group">
-    <%= f.collection_select(:category_id, Category.all, :id, :name) %>
-    <%= f.label :code, "Code" %>
+    <%= f.label :code, "代碼" %>
     <%= f.text_field :code %>
 </div>
 
 <div class="form-group">
-    <%= f.label :description, "Description" %>
+    <p>表頭種類<%= f.collection_select(:category_id, Category.all, :id, :name) %></p>
+</div>
+
+
+<div class="form-group">
+    <%= f.label :description, "詳細資料" %>
     <%= f.text_area :description, :class => "form-control" %>
 </div>
 
     <%= f.fields_for :location do |location_form| %>
 <div class="form-group">
-    <%= location_form.label :name, "Location Name" %>
+    <%= location_form.label :name, "位置" %>
     <%= location_form.text_field :name, :class => "form-control"  %>
 </div>
     <% unless location_form.object.new_record? %>
-    <%= location_form.label :_destroy, 'Remove:' %>
+    <%= location_form.label :_destroy, '是否刪除位置:' %>
     <%= location_form.check_box :_destroy %>
 <% end %>
 </p>
