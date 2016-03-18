@@ -1,17 +1,24 @@
-<ul>
-<% @attendees.each do |attendee| %>
-	<li>
-	  <%= attendee.name %>
-	  <%= link_to 'show', qrcode_attendee_path(@qrcode, attendee), :class => "btn btn-default" %>
+<h2>編號: <%= @qrcode.code %> 點檢者明細</h2>
 
-	  <%= link_to 'edit', edit_qrcode_attendee_path(@qrcode, attendee), :class => "btn btn-default"  %>
 
-	  <%= link_to 'destroy', qrcode_attendee_path(@qrcode, attendee), :class => "btn btn-default" ,:method => :delete %>
+<table>
+ <ul>
+ <% @attendees.each do |attendee| %>
+	 <li>
+     <%= attendee.created_at %>
+	   <%= attendee.name %>
+
+	  <%= link_to '詳細資料', qrcode_attendee_path(@qrcode, attendee), :class => "btn btn-default" %>
+
+	   <%= link_to '編輯', edit_qrcode_attendee_path(@qrcode, attendee), :class => "btn btn-default"  %>
+
+	   <%= link_to '刪除', qrcode_attendee_path(@qrcode, attendee), :class => "btn btn-default" ,:method => :delete %>
 	</li>
-<% end %>
+ <% end %>
+</table>
 
 </ul>
 
-	  <%= link_to 'new attendee', new_qrcode_attendee_path(@qrcode), :class => "btn btn-default"  %>
+	  <%= link_to '新增點檢者', new_qrcode_attendee_path(@qrcode), :class => "btn btn-default"  %>
 
-	  <p><%= link_to 'Back to index', :controller => 'qrcodes', :action => 'index' %></p>
+	  <p><%= link_to '回到首頁', qrcodes_path,:class => "btn btn-success" %></p>

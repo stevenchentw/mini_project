@@ -9,7 +9,7 @@
 <% end %>
 
 <div class="form-group">
-    <%= f.label :code, "代碼" %>
+    <%= f.label :code, "編號" %>
     <%= f.text_field :code %>
 </div>
 
@@ -23,15 +23,14 @@
     <%= f.text_area :description, :class => "form-control" %>
 </div>
 
-    <%= f.fields_for :location do |location_form| %>
-<div class="form-group">
+<%= f.fields_for :location do |location_form| %>
+  <div class="form-group">
     <%= location_form.label :name, "位置" %>
     <%= location_form.text_field :name, :class => "form-control"  %>
-</div>
+  </div>
     <% unless location_form.object.new_record? %>
     <%= location_form.label :_destroy, '是否刪除位置:' %>
     <%= location_form.check_box :_destroy %>
-<% end %>
-</p>
+    <% end %>
 <% end %>
 
