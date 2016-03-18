@@ -1,9 +1,9 @@
 <h2> New QRcode </h2>
 
-<%= form_for setup_qrcode(@qrcode), :url => qrcodes_path do |f| %>
+<%= form_for @qrcode, :url => qrcodes_path do |f| %>
 
     <%= render :partial => "form", :locals => { :f => f} %>
 
-    <%= f.submit "Create" %>
+    <%= f.submit "Create", :class => "btn btn-default"  %>
 
 <% end %>

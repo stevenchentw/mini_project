@@ -25,8 +25,10 @@ class QrcodesController < ApplicationController
     @qrcode = Qrcode.new( qrcode_params )
 
     if @qrcode.save
-       redirect_to qrcodes_path
+
        flash[:notice] = "耶~又多了一筆資料"
+
+       redirect_to qrcodes_path
     else
        render :action => :new
     end
@@ -37,8 +39,11 @@ class QrcodesController < ApplicationController
 
  def update
  	  if @qrcode.update( qrcode_params )
-       redirect_to qrcode_path(@qrcode)
+
        flash[:notice] = "可惡. 竟然被你修改成功了"
+
+       redirect_to qrcode_path(@qrcode)
+
     else
         render :action => :edit
     end

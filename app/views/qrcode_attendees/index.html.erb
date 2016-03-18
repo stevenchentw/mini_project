@@ -2,14 +2,16 @@
 <% @attendees.each do |attendee| %>
 	<li>
 	  <%= attendee.name %>
-	  <%= link_to 'show', qrcode_attendee_path(@qrcode, attendee) %>
-	  <%= link_to 'edit', edit_qrcode_attendee_path(@qrcode, attendee) %>
-	  <%= link_to 'destroy', qrcode_attendee_path(@qrcode, attendee),:method => :delete %>
+	  <%= link_to 'show', qrcode_attendee_path(@qrcode, attendee), :class => "btn btn-default" %>
+
+	  <%= link_to 'edit', edit_qrcode_attendee_path(@qrcode, attendee), :class => "btn btn-default"  %>
+
+	  <%= link_to 'destroy', qrcode_attendee_path(@qrcode, attendee), :class => "btn btn-default" ,:method => :delete %>
 	</li>
 <% end %>
 
 </ul>
 
-	  <%= link_to 'new attendee', new_qrcode_attendee_path(@qrcode) %>
+	  <%= link_to 'new attendee', new_qrcode_attendee_path(@qrcode), :class => "btn btn-default"  %>
 
 	  <p><%= link_to 'Back to index', :controller => 'qrcodes', :action => 'index' %></p>

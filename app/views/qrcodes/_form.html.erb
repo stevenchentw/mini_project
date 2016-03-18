@@ -8,22 +8,22 @@
       </ul>
 <% end %>
 
-<p>
+<div class="form-group">
     <%= f.collection_select(:category_id, Category.all, :id, :name) %>
     <%= f.label :code, "Code" %>
     <%= f.text_field :code %>
-</p>
+</div>
 
-<p>
+<div class="form-group">
     <%= f.label :description, "Description" %>
-    <%= f.text_area :description %>
-</p>
+    <%= f.text_area :description, :class => "form-control" %>
+</div>
 
     <%= f.fields_for :location do |location_form| %>
-<p>
+<div class="form-group">
     <%= location_form.label :name, "Location Name" %>
-    <%= location_form.text_field :name %>
-
+    <%= location_form.text_field :name, :class => "form-control"  %>
+</div>
     <% unless location_form.object.new_record? %>
     <%= location_form.label :_destroy, 'Remove:' %>
     <%= location_form.check_box :_destroy %>
