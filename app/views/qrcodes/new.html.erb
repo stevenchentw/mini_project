@@ -16,12 +16,4 @@ Choose QR code image to read/scan: <input name="file" type="file" />
 <input type="submit" value="Read QR code" />
 </form>
 
-<?xml version="1.0" encoding="UTF-8"?>
-<barcodes>
-<barcode type="qrcode">
-   <symbol seq="0">
-       <data><![CDATA[Inhalt des gelesenen QR Codes]]></data>
-       <error />
-   </symbol>
-</barcode>
-</barcodes>
+<p><%= link_to '回到主選單', qrcodes_path, :class => "btn btn-default"  %></p>
