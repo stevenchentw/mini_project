@@ -35,6 +35,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'pg'
 gem 'rails_12factor', group: :production
 
+gem 'rqrcode-rails3'
+gem 'mini_magick'
+
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
