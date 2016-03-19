@@ -17,13 +17,12 @@ Choose QR code image to read/scan: <input name="file" type="file" />
 <input type="submit" value="Read QR code" />
 </form>
 
-
-<script type="text/javascript">
-// 擴展API加載完畢後調用onPlusReady回調函數
-document.addEventListener( "plusready", onPlusReady, false );
-// 擴展API加載完畢，現在可以正常調用擴展API
-function onPlusReady() {
-var cmr = plus.camera.getCamera();
-alert( "Camera supperted image formats: " + cmr.supportedImageFormats );
-}
-</script>
+<?xml version="1.0" encoding="UTF-8"?>
+<barcodes>
+<barcode type="qrcode">
+   <symbol seq="0">
+       <data><![CDATA[Inhalt des gelesenen QR Codes]]></data>
+       <error />
+   </symbol>
+</barcode>
+</barcodes>
