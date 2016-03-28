@@ -50,6 +50,7 @@ class QrcodesController < ApplicationController
 
  end
 
+
 private
 
 def set_qrcode
@@ -57,7 +58,8 @@ def set_qrcode
 end
 
 def qrcode_params
-  params.require(:qrcode).permit(:code, :description, :category_id,:location_attributes => [:id, :name, :_destroy], :group_ids => [] )
+  params.require(:qrcode).permit(:code, :description, :category_id, :photo,
+    :location_attributes => [:id, :name, :_destroy], :group_ids => [] )
 end
 
 

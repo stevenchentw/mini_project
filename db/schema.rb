@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160316040143) do
+ActiveRecord::Schema.define(version: 20160328053609) do
 
   create_table "attendees", force: :cascade do |t|
     t.string   "name"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20160316040143) do
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "category_id"
   end
 
   create_table "event_groupships", force: :cascade do |t|
@@ -49,6 +50,16 @@ ActiveRecord::Schema.define(version: 20160316040143) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "images", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+  end
+
   create_table "locations", force: :cascade do |t|
     t.string   "name"
     t.integer  "qrcode_id"
@@ -68,11 +79,15 @@ ActiveRecord::Schema.define(version: 20160316040143) do
     t.text     "description"
     t.boolean  "is_public"
     t.string   "capacitynteger"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "status"
     t.string   "name"
     t.integer  "category_id"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
 end

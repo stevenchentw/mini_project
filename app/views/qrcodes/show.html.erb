@@ -1,6 +1,14 @@
 
 <h2><%= @qrcode.name %></h2>
 
+<% if @qrcode.photo.exists? %>
+
+<%= image_tag(@qrcode.photo.url) %>
+
+<% else %>
+  None
+<% end %>
+
 <ul>
 <% @qrcode.groups.each do |g| %>
   <li>單位: <%= g.name %></li>
