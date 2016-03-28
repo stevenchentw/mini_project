@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160328053609) do
+ActiveRecord::Schema.define(version: 20160328072003) do
 
   create_table "attendees", force: :cascade do |t|
     t.string   "name"
@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 20160328053609) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.integer  "qrcodenumber"
   end
 
 end
